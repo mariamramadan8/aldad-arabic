@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الضاد – منصة تعلّم اللغة العربية</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1c1410;--bg2:#271c15;--card:#33251c;--line:#4a372a;--text:#f4ead8;--muted:#b9a58c;--gold:#d2a86a;--gold2:#a8793f;--ok:#4f9d6b;--no:#b4533f;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f6efe2;--bg2:#efe4d0;--card:#fffaf0;--line:#dccbb0;--text:#2e2016;--muted:#7a6550;--gold:#8a5a22;--gold2:#a8793f;color-scheme:light}}
+:root[data-theme="light"]{--bg:#f6efe2;--bg2:#efe4d0;--card:#fffaf0;--line:#dccbb0;--text:#2e2016;--muted:#7a6550;--gold:#8a5a22;--gold2:#a8793f;color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Tajawal',Tahoma,Arial,sans-serif;line-height:1.9}
+.view{display:none;min-height:100vh;animation:in .6s ease}.view.on{display:block}
+@keyframes in{from{opacity:0}to{opacity:1}}
+/* welcome */
+#welcome{position:relative;overflow:hidden;display:none;align-items:center;background:radial-gradient(ellipse at 30% 20%,var(--bg2),var(--bg) 70%)}
+#welcome.on{display:flex}
+.pat{position:absolute;inset:0;width:100%;height:100%;opacity:.12;pointer-events:none}
+.wrap{position:relative;max-width:1100px;margin:0 auto;padding:40px 6vw;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;width:100%}
+.brand{font-family:'Reem Kufi',serif;color:var(--gold);letter-spacing:1px;margin-bottom:14px}
+.wrap h1{font-family:'Amiri',serif;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.35;margin:0 0 16px}
+.wrap h1 em{font-style:normal;color:var(--gold)}
+.wrap p{color:var(--muted);font-size:1.15rem;max-width:480px;margin:0 0 30px}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2a1a0c;font:700 1.15rem 'Tajawal',sans-serif;padding:14px 38px;border-radius:12px;text-decoration:none;border:0;cursor:pointer;box-shadow:0 10px 30px -10px var(--gold2);transition:.25s}
+.btn:hover{transform:translateY(-3px)}
+.art{width:100%;max-width:440px;margin:0 auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.35))}
+/* header */
+.hd{display:flex;justify-content:space-between;align-items:center;padding:18px 6vw;border-bottom:1px solid var(--line)}
+.hd a{font-family:'Reem Kufi',serif;color:var(--gold);text-decoration:none;font-size:1.5rem}
+.page{max-width:1000px;margin:0 auto;padding:44px 6vw 80px}
+h2.t{font-family:'Amiri',serif;font-size:clamp(2rem,5vw,3rem);text-align:center;margin:0 0 6px}
+.sub{text-align:center;color:var(--muted);margin:0 0 38px}
+.grades{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gc{text-decoration:none;color:var(--text);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:34px 26px;text-align:center;transition:.3s;position:relative;overflow:hidden}
+.gc:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 20px 40px -20px #000}
+.gc .n{font-family:'Amiri',serif;font-size:5rem;line-height:1;color:var(--gold)}
+.gc h3{font-family:'Amiri',serif;font-size:1.6rem;margin:6px 0}.gc p{color:var(--muted);margin:0 0 14px;font-size:.95rem}.gc b{color:var(--gold)}
+/* grade page */
+.back{color:var(--muted);text-decoration:none}.back:hover{color:var(--gold)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 30px}
+.chips a{padding:5px 18px;border-radius:99px;border:1px solid var(--line);color:var(--muted);text-decoration:none;font-size:.9rem;background:var(--card)}.chips a:hover{border-color:var(--gold);color:var(--gold)}
+.sec{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;margin-bottom:26px}
+.sh{display:flex;gap:16px;align-items:center;margin-bottom:6px}
+.sh i{font-style:normal;flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#2a1a0c;font:700 1.3rem 'Reem Kufi',serif}
+.sh h3{font-family:'Amiri',serif;font-size:1.7rem;margin:0}
+.desc{color:var(--muted);margin:0 0 18px}
+.media{display:grid;grid-template-columns:1.6fr 1fr;gap:16px}
+.box{border:2px dashed var(--line);border-radius:16px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--muted);text-align:center;padding:16px;background:var(--bg2)}
+.box span{font-size:2.2rem}
+.box iframe,.box video{width:100%;height:100%;min-height:240px;border:0;border-radius:12px}
+.box.has{border-style:solid;padding:0;overflow:hidden}
+.dl{text-decoration:none;color:var(--gold);font-weight:700}
+.qz{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.qz h4{margin:0 0 4px;color:var(--gold);font-family:'Reem Kufi',serif;font-size:1.15rem}
+.qz p{margin:0 0 8px;font-weight:500;font-size:1.1rem}
+.o{display:block;width:100%;text-align:right;margin:8px 0;padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--text);font:500 1rem 'Tajawal',sans-serif;cursor:pointer;transition:.2s}
+.o:hover:not(:disabled){border-color:var(--gold)}.o.ok{background:var(--ok);color:#fff;border-color:var(--ok)}.o.no{background:var(--no);color:#fff;border-color:var(--no)}
+.res{font-weight:700;min-height:1.6em}
+.qbtn{font:700 1.05rem 'Tajawal',sans-serif;padding:12px 30px;border-radius:12px;border:0;cursor:pointer;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2a1a0c;box-shadow:0 8px 22px -10px var(--gold2);transition:.2s}.qbtn:hover{transform:translateY(-2px)}.qbtn.alt{background:var(--bg2);color:var(--text);border:1px solid var(--line);box-shadow:none}
+.ov{position:fixed;inset:0;z-index:50;background:rgba(10,6,3,.72);display:grid;place-items:center;padding:20px;animation:in .25s ease}
+.md{width:100%;max-width:560px;max-height:90vh;overflow:auto;background:var(--card);border:1px solid var(--gold2);border-radius:22px;padding:26px;box-shadow:0 30px 80px -20px #000}
+.md h3{font-family:'Amiri',serif;font-size:1.6rem;margin:14px 0 10px}
+.mh{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.95rem}
+.x{all:unset;cursor:pointer;color:var(--muted);font-size:1.2rem;padding:4px 8px}
+.pg{height:6px;border-radius:9px;background:var(--bg2);margin-top:10px;overflow:hidden}.pg i{display:block;height:100%;background:var(--gold);transition:.4s}
+.score{font-family:'Reem Kufi',serif;font-size:3.4rem;color:var(--gold);text-align:center}
+.md p{text-align:center}
+@media(max-width:820px){.wrap{grid-template-columns:1fr;text-align:center}.wrap p{margin-inline:auto}.art{max-width:300px;order:-1}.grades{grid-template-columns:1fr}.media{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<section class="view" id="welcome">
+ <svg class="pat" aria-hidden="true"><defs><pattern id="p" width="80" height="80" patternUnits="userSpaceOnUse"><g fill="none" stroke="#d2a86a" stroke-width="1"><path d="M40 4l12 24 24 12-24 12-12 24-12-24L4 40l24-12z"/><circle cx="40" cy="40" r="10"/></g></pattern></defs><rect width="100%" height="100%" fill="url(#p)"/></svg>
+ <div class="wrap">
+  <div>
+   <div class="brand">منصة الضاد</div>
+   <h1>لغة الضاد.. <em>جمالٌ</em> يُتقَن بالفهم</h1>
+   <p>رحلة هادئة مع النحو والبلاغة والأدب لطلاب المرحلة الثانوية، دروس مصوّرة وملفات واختبارات بعد كل درس.</p>
+   <a class="btn" href="#levels">ابدأ التعلّم ←</a>
+  </div>
+  <svg class="art" viewBox="0 0 400 400" role="img" aria-label="لوحة خط عربي">
+   <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6c48c"/><stop offset="1" stop-color="#a8793f"/></linearGradient></defs>
+   <circle cx="200" cy="200" r="190" fill="#2b1e16" stroke="url(#g)" stroke-width="3"/>
+   <circle cx="200" cy="200" r="172" fill="none" stroke="#d2a86a" stroke-opacity=".35" stroke-dasharray="3 7"/>
+   <g fill="none" stroke="url(#g)" stroke-width="2"><rect x="95" y="95" width="210" height="210"/><rect x="95" y="95" width="210" height="210" transform="rotate(45 200 200)"/><circle cx="200" cy="200" r="105"/></g>
+   <circle cx="200" cy="200" r="98" fill="#f1e4cc"/>
+   <text x="200" y="232" text-anchor="middle" font-family="Reem Kufi,Amiri,serif" font-size="100" font-weight="700" fill="#4a2f1b">عربية</text>
+   <path d="M118 258q82 24 164 0" fill="none" stroke="#a8793f" stroke-width="3" stroke-linecap="round"/>
+   <g transform="rotate(-38 330 90)"><rect x="318" y="30" width="16" height="120" rx="3" fill="url(#g)"/><path d="M318 150h16l-8 26z" fill="#f1e4cc"/></g>
+   <g fill="#d2a86a"><circle cx="48" cy="200" r="5"/><circle cx="352" cy="200" r="5"/><circle cx="200" cy="48" r="5"/><circle cx="200" cy="352" r="5"/></g>
+  </svg>
+ </div>
+</section>
+<section class="view" id="levels">
+ <div class="hd"><a href="#welcome">الضاد</a><span style="color:var(--muted)">اختيار الصف</span></div>
+ <div class="page">
+  <h2 class="t">اختر صفك الدراسي</h2><p class="sub">ادخل على صفك لتجد الدروس والفيديوهات والملفات والاختبارات</p>
+  <div class="grades">
+   <a class="gc" href="#grade1"><div class="n">١</div><h3>الصف الأول الثانوي</h3><b>ادخل ←</b></a>
+   <a class="gc" href="#grade2"><div class="n">٢</div><h3>الصف الثاني الثانوي</h3><b>ادخل ←</b></a>
+   <a class="gc" href="#grade3"><div class="n">٣</div><h3>الصف الثالث الثانوي</h3><b>ادخل ←</b></a>
+  </div>
+ </div>
+</section>
+<section class="view" id="content"></section>
+<script>
+/* لإضافة فيديو أو ملف لأي درس: ضعي الرابط في خانة الفيديو (v) أو الملف (f) */
+/* [العنوان, الوصف, v رابط الفيديو, f رابط الملف, سؤال الكويز, الاختيارات, رقم الإجابة الصحيحة] */
+var G={
+grade1:{t:"الصف الأول الثانوي",u:[
+["الجملة الاسمية","المبتدأ والخبر وإعرابهما.","","","ما الخبر في جملة: العلمُ نورٌ؟",["العلمُ","نورٌ","لا يوجد"],1],
+["الجملة الفعلية","الفعل والفاعل والمفعول به.","","","ما إعراب (الدرسَ) في: كتبَ الطالبُ الدرسَ؟",["فاعل","مفعول به","مبتدأ"],1],
+["التشبيه","أركان التشبيه وأنواعه.","","","كم عدد أركان التشبيه؟",["ركنان","ثلاثة","أربعة"],2],
+["الأدب الجاهلي","الشعر الجاهلي والمعلّقات.","","","أي مما يلي من شعراء العصر الجاهلي؟",["امرؤ القيس","المتنبي","شوقي"],0]]},
+grade2:{t:"الصف الثاني الثانوي",u:[
+["كان وأخواتها","اسم كان وخبرها.","","","ما حكم خبر كان؟",["مرفوع","منصوب","مجرور"],1],
+["إنّ وأخواتها","اسم إنّ وخبرها.","","","ما إعراب (العلمَ) في: إنَّ العلمَ نافعٌ؟",["اسم إنّ","خبر إنّ","فاعل"],0],
+["الاستعارة","التصريحية والمكنية.","","","الاستعارة تشبيه حُذف منه:",["أحد طرفيه","الأداة فقط","وجه الشبه فقط"],0],
+["الأدب الأموي والعباسي","النقائض والتجديد.","","","من شعراء العصر العباسي:",["جرير","أبو تمام","عنترة"],1]]},
+grade3:{t:"الصف الثالث الثانوي",u:[
+["الاستثناء والنداء","أحكام المستثنى وأدوات النداء.","","","المستثنى بعد (إلا) في الكلام التام الموجب:",["منصوب","مرفوع","مجرور"],0],
+["التوابع","النعت والتوكيد والبدل والعطف.","","","ما إعراب (المجتهدُ) في: جاء الطالبُ المجتهدُ؟",["نعت","بدل","توكيد"],0],
+["الكناية والمحسنات","الكناية والطباق والجناس.","","","الطباق هو الجمع بين:",["متشابهين","متضادين","جملتين"],1],
+["الأدب الحديث","البارودي وشوقي وحافظ.","","","لقب أحمد شوقي:",["شاعر النيل","أمير الشعراء","شاعر الربابة"],1]]}
+};
+function show(id){document.querySelectorAll('.view').forEach(function(v){v.classList.toggle('on',v.id===id)});scrollTo(0,0)}
+function media(v,f){
+ var a=v?'<div class="box has"><iframe src="'+v+'" allowfullscreen title="فيديو الدرس"></iframe></div>':'<div class="box"><span>🎬</span><b>مكان فيديو الدرس</b><small>سيُضاف الفيديو هنا</small></div>';
+ var b=f?'<div class="box"><span>📄</span><a class="dl" href="'+f+'" target="_blank" rel="noopener">تحميل ملف الدرس</a></div>':'<div class="box"><span>📄</span><b>مكان ملف الدرس</b><small>سيُضاف الملف هنا</small></div>';
+ return '<div class="media">'+a+b+'</div>';
+}
+function grade(k){
+ var g=G[k],c=document.getElementById('content'),h='<div class="hd"><a href="#welcome">الضاد</a><a class="back" href="#levels" style="font-family:Tajawal;font-size:1rem">→ اختيار الصف</a></div><div class="page"><h2 class="t">'+g.t+'</h2><p class="sub">اختر الدرس، شاهد الفيديو وحمّل الملف ثم حلّ الكويز</p><div class="chips">';
+ g.u.forEach(function(u,i){h+='<a href="#'+k+'" data-s="s'+i+'">'+(i+1)+'. '+u[0]+'</a>'});
+ h+='</div>';
+ g.u.forEach(function(u,i){
+  h+='<div class="sec" id="s'+i+'"><div class="sh"><i>'+(i+1)+'</i><h3>'+u[0]+'</h3></div><p class="desc">'+u[1]+'</p>'+media(u[2],u[3])+'<div class="qz"><button class="qbtn" data-i="'+i+'">📝 ابدأ كويز الدرس</button></div></div>';
+ });
+ c.innerHTML=h+'</div>';
+ c.querySelectorAll('.chips a').forEach(function(a){a.onclick=function(e){e.preventDefault();document.getElementById(a.dataset.s).scrollIntoView({behavior:'smooth'})}});
+ c.querySelectorAll('.qbtn').forEach(function(b){b.onclick=function(){quiz(k,g.u[+b.dataset.i],+b.dataset.i)}});
+}
+/* أسئلة إضافية لكل درس (بجانب سؤال الدرس الأساسي): [السؤال, الاختيارات, رقم الإجابة الصحيحة] */
+var X={
+grade1:[[["ما المبتدأ في: الصدقُ منجاةٌ؟",["الصدقُ","منجاةٌ","لا يوجد"],0],["المبتدأ يكون دائمًا:",["مرفوعًا","منصوبًا","مجرورًا"],0]],[["ما إعراب (الطالبُ) في: كتبَ الطالبُ الدرسَ؟",["فاعل","مفعول به","مبتدأ"],0],["الجملة التي تبدأ بفعل تسمّى:",["اسمية","فعلية","شرطية"],1]],[["في: العلمُ كالنورِ، الأداة هي:",["العلم","الكاف","النور"],1],["المشبّه به في: العلمُ كالنورِ هو:",["العلم","النور","الكاف"],1]],[["أشهر ما قيل في العصر الجاهلي:",["المعلّقات","المقامات","الموشحات"],0],["الشعر عند العرب في الجاهلية كان:",["ديوان العرب","غير معروف","نثرًا فقط"],0]]],
+grade2:[[["ما إعراب (الجوُّ) في: كان الجوُّ جميلًا؟",["اسم كان","خبر كان","فاعل"],0],["اسم كان يكون:",["مرفوعًا","منصوبًا","مجرورًا"],0]],[["ما حكم خبر إنّ؟",["مرفوع","منصوب","مجرور"],0],["ما إعراب (نافعٌ) في: إنَّ العلمَ نافعٌ؟",["خبر إنّ","اسم إنّ","نعت"],0]],[["في: رأيتُ أسدًا يخطبُ، المحذوف هو:",["المشبّه","المشبّه به","لا شيء"],0],["الاستعارة التي يُذكر فيها المشبّه به تسمّى:",["تصريحية","مكنية","مرسلة"],0]],[["من شعراء العصر الأموي:",["جرير","أبو تمام","شوقي"],0],["اشتهر العصر الأموي بفن:",["النقائض","المسرحية","الرواية"],0]]],
+grade3:[[["أداة من أدوات النداء:",["يا","إلا","ثم"],0],["في: حضرَ الطلابُ إلا زيدًا، إعراب (زيدًا):",["مستثنى منصوب","فاعل","مبتدأ"],0]],[["من التوابع:",["النعت","الفاعل","الخبر"],0],["التابع يتبع ما قبله في:",["الإعراب","الوزن","الحروف"],0]],[["(فلان كثير الرماد) كناية عن:",["الكرم","الفقر","الشجاعة"],0],["الجمع بين الكلمة وضدها يسمّى:",["الطباق","الجناس","التشبيه"],0]],[["لقب حافظ إبراهيم:",["شاعر النيل","أمير الشعراء","شاعر الربابة"],0],["من رواد إحياء الشعر الحديث:",["البارودي","امرؤ القيس","جرير"],0]]]
+};
+function quiz(k,u,i){
+ var qs=[[u[4],u[5],u[6]]].concat((X[k]&&X[k][i])||[]),n=0,sc=0,ov=document.createElement('div');
+ ov.className='ov';document.body.appendChild(ov);
+ function close(){ov.remove()}
+ ov.onclick=function(e){if(e.target===ov)close()};
+ function draw(){
+  if(n>=qs.length){
+   ov.innerHTML='<div class="md"><h3 style="text-align:center">انتهى الكويز</h3><div class="score">'+sc+' / '+qs.length+'</div><p>'+(sc===qs.length?'ممتاز! أحسنت 🎉':'راجع الدرس وحاول مرة أخرى')+'</p><div style="display:flex;gap:10px;justify-content:center"><button class="qbtn" id="rt">إعادة الكويز</button><button class="qbtn alt" id="cl">إغلاق</button></div></div>';
+   ov.querySelector('#rt').onclick=function(){n=0;sc=0;draw()};ov.querySelector('#cl').onclick=close;return;
+  }
+  var q=qs[n],s='<div class="md"><div class="mh"><span>سؤال '+(n+1)+' من '+qs.length+'</span><button class="x" id="cl">✕</button></div><div class="pg"><i style="width:'+(n/qs.length*100)+'%"></i></div><h3>'+q[0]+'</h3>';
+  q[1].forEach(function(t,x){s+='<button class="o" data-x="'+x+'">'+t+'</button>'});
+  ov.innerHTML=s+'<div class="res"></div><div style="text-align:center;margin-top:10px"><button class="qbtn" id="nx" style="display:none">'+(n===qs.length-1?'عرض النتيجة':'السؤال التالي ←')+'</button></div></div>';
+  ov.querySelector('#cl').onclick=close;
+  var os=ov.querySelectorAll('.o');
+  os.forEach(function(b){b.onclick=function(){var ok=+b.dataset.x===q[2];if(ok)sc++;os.forEach(function(x){x.disabled=true});b.classList.add(ok?'ok':'no');if(!ok)os[q[2]].classList.add('ok');ov.querySelector('.res').textContent=ok?'إجابة صحيحة!':'إجابة خاطئة';ov.querySelector('#nx').style.display='inline-block'}});
+  ov.querySelector('#nx').onclick=function(){n++;draw()};
+ }
+ draw();
+}
+function route(){
+ var h=(location.hash||'#welcome').slice(1);
+ if(G[h]){grade(h);show('content')}else show(h==='levels'?'levels':'welcome');
+}
+addEventListener('hashchange',route);route();
+</script>
+</body>
+</html>
